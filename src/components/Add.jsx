@@ -12,12 +12,20 @@ const Add = ({add}) => {
     setPrice(0);
   };
 
+  const onsubmit = (e) => {
+    e.preventDefault();
+    if (!name | !price) return;
+    add({name: name, price: price});
+    setName("");
+    setPrice("");
+  };
+
   return (
-    <div>
+    <form onSubmit={onsubmit}>
       <input onChange={(e) => setName(e.target.value)} value={name} type="text" id="" name="" />
-      <input onChange={(e) => setPrice(e.target.value)} value={price} type="number" id="" name="" />
-      <Boton name="Agregar" />
-    </div>
+      <input onChange={(e) => setPrice(e.target.value)} value={price} type="text" id="" name="" />
+      <input type='submit' value={"add"} />
+    </form>
   )
 }
 

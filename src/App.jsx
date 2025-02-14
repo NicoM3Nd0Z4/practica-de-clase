@@ -8,11 +8,11 @@ import List from './components/List';
 import Add from './components/Add';
 
 function App() {
-  const items = [
+  const [items, setItems] = useState([
     {id: 1,price: 1, name: "item 1"},
     {id: 2,price: 2, name: "item 2"},
     {id: 3,price: 3, name: "item 3"},
-  ]
+  ]);
 
   const [count, setCount] = useState(0);
   const sum = () => {
@@ -26,7 +26,11 @@ function App() {
 
   const add = (item) => {
     item.id = items.length + 1;
-    items.push(item);
+    setItems([...items, item]);
+  };
+
+  const del = (id) => {
+    setItems(items.filter((item) => item.id !== id));
   };
 
   return (
@@ -37,7 +41,7 @@ function App() {
       <Boton name={"resta"} click={res} />
       <Boton name={"mensaje"} click={() => alert("hola")} />
       <Add add={add} />
-      <List items={items} />
+      <List items={items} ondelete={del}/>
       <Footer />
     </div>
   );
