@@ -14,10 +14,12 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from 'react-router-dom';
 
-const pages = ['Inventario', 'Agregar Producto'];
+const pages = ['Inventario', 'Agregar Producto', 'Logout', 'Nombre'];
 const pagesToLink = {
     'Inventario': '/items',
-    'Agregar Producto': '/add'
+    'Agregar Producto': '/add',
+    'Logout': '/',
+    'Nombre': '/nombre'
 }
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
  
@@ -41,6 +43,10 @@ function ResponsiveAppBar({ logout }) {
         navigate("/items") 
       } else if (e.target.textContent === pages[1]) {
         navigate("/add")
+      } else if (e.target.textContent === pages[2]) {
+        navigate("/")
+      } else if (e.target.textContent === pages[3]) {
+        navigate("/nombre")
       }
     })
   };

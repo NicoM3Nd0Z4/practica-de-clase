@@ -26,8 +26,6 @@ function App() {
   const res = () => {
     setCount(count - 1, console.log(count));
   };
-  const nombre = "Nicolas Mendoza";
-  const elemento = <h1>Hola , {nombre}</h1>;
 
   const add = (item) => {
     item.id = items.length + 1;
@@ -58,6 +56,7 @@ function App() {
           <Route path="/" element={<Login login={login}/>} />
           <Route path="/add" element={<Add add={add} />} />
           <Route path="/items" element={ <List items={items} ondelete={del}/> } />
+          <Route path="/nombre" element={<h1>Hola, Nicolas Mendoza</h1>} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -41,6 +41,8 @@ const Login = ({ login }) => {
             label={"Username"}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            marginTop={"10px"}
+            id="margin-normal" margin="normal"
           >
 
           </TextField>
@@ -48,6 +50,7 @@ const Login = ({ login }) => {
             label={"Password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            id="margin-normal" margin="normal"
           >
 
           </TextField>
@@ -56,6 +59,7 @@ const Login = ({ login }) => {
             variant={"contained"}
             color={"primary"}
             fullWidth
+            id="margin-normal" margin="normal"
           >
             Login
           </Button>
